@@ -33,7 +33,7 @@ public class UserFriendMsgSaveReqVO extends BaseReqVO {
      * 消息内容
      */
     @NotNull(message = "参数错误~")
-    @Length(min = 1, max = 255, message = "参数错误~")
+    @Length(min = 1, max = 1255, message = "参数错误~")
     private String msgContent;
 
 }

@@ -11,5 +11,13 @@ public class UserLoginResVO {
     private Long uid;
     
     private String sid;
+    /**
+     * 昵称
+     */
+    private String name;
+    /**
+     * 头像
+     */
+    private String avatar;
     
 }

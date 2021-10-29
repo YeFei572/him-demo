@@ -66,6 +66,8 @@ public class UserLoginController {
         UserLoginResVO userLoginResVO = new UserLoginResVO();
         userLoginResVO.setUid(uid);
         userLoginResVO.setSid(token);
+        userLoginResVO.setAvatar(user.getAvatar());
+        userLoginResVO.setName(user.getName());
         return ResultVOUtils.success(userLoginResVO);
     }
     

@@ -66,9 +66,8 @@ public class UserLoginUtils {
    * @return
    */
   public static UserLoginDTO check(HttpServletRequest request) {
-    
-    String sUid = request.getParameter("UID");
-    String token = request.getParameter("SID");
+    String sUid = request.getHeader("uid");
+    String token = request.getHeader("sid");
     if (sUid == null || sUid.isEmpty() || token == null || token.isEmpty()) {
       Cookie[] cookies = request.getCookies();
       if (cookies == null) {

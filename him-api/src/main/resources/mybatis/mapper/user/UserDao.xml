@@ -11,7 +11,7 @@
     </select>
 
     <select id="findPwdByUid" parameterType="long" resultType="com.lmxdawn.him.common.entity.user.User">
-        SELECT pwd
+        SELECT pwd, name, avatar
         FROM `user`
         where uid=#{uid}
         limit 1

@@ -19,8 +19,8 @@ import io.netty.handler.timeout.IdleStateHandler;
 public class SocketServerInitializer extends ChannelInitializer<Channel> {
     @Override
     protected void initChannel(Channel ch) throws Exception {
-        //15 秒没有向客户端发送消息就发生心跳
-        ch.pipeline().addLast(new IdleStateHandler(15, 0, 0))
+        // 31 秒没有向客户端发送消息就发生心跳
+        ch.pipeline().addLast(new IdleStateHandler(31, 0, 0))
                 // google Protobuf 编解码
                 .addLast(new ProtobufVarint32FrameDecoder())
                 .addLast(new ProtobufDecoder(WSBaseReqProtoOuterClass.WSBaseReqProto.getDefaultInstance()))

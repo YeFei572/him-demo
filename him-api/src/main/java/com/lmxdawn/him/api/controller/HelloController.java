@@ -15,15 +15,16 @@ public class HelloController {
     private WSServer wsServer;
 
     @GetMapping("/hello")
-    public String hello(@RequestParam("uid") Long uid) {
+    public String hello(@RequestParam("uid") Long uid,
+                        @RequestParam(value = "msg", defaultValue = "嘿嘿测试", required = false) String msgContent
+    ) {
 
         Integer type = 1;
         Long id = uid;
         Integer msgType = 0;
-        String msgContent = "嘿嘿测试";
         Long sUid = 1L;
         String name = "测试";
-        String avatar = "头像";
+        String avatar = "https://thirdwx.qlogo.cn/mmopen/vi_32/oT36o8Gib0RfujkyQc6ftibDiabsK4k6t26ryeAIYib5veeKhQRBAbFkicpw5AmUx05PP2tvYsicz6JfBJUUMTicvnMPg/132";
         String remark = "说明";
 
         WSBaseReqVO wsBaseReqVO = WSBaseReqUtils.create(type, id, msgType, msgContent, sUid, name, avatar, remark);

@@ -114,15 +114,6 @@ public class WSServerHandler extends SimpleChannelInboundHandler<WSBaseReqProtoO
         
         // 加入 在线 map 中
         WSSocketHolder.put(uid, ctx.channel());
-//        String msg = "The";
-        String msg = "The new list is a Uint8List containing the elements of this list at positions greater than or equal to start and less than end in the same order as they occur in this list";
-        msg = msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg + msg ;
-        WSBaseResProtoOuterClass.WSBaseResProto result = WSBaseResProtoOuterClass.WSBaseResProto.newBuilder()
-                .setType(WSResTypeConstant.LOGIN_OUT)
-                .setMessage(WSMessageResProtoOuterClass.WSMessageResProto.newBuilder().setMsgContent(msg).build())
-                .setCreateTime(new Date().toString())
-                .build();
-        ctx.channel().writeAndFlush(result);
     }
 
     @Override

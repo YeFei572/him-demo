@@ -28,7 +28,7 @@ public class WSServer {
     @Value("${ws.port}")
     private int wsPort;
 
-    @Value("9002")
+    @Value("${ss.port:9002}")
     private int ssPort;
 
     private EventLoopGroup boss = new NioEventLoopGroup();
